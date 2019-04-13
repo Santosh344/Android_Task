@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">Num_Converter</string>
+    <string name="number1">Enter A number Below</string>
+    <string name="number2">Enter </string>
+    <string name="output">Your Output</string>
+</resources>
