@@ -1,0 +1,99 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "colab": {
+      "provenance": [],
+      "authorship_tag": "ABX9TyNK8/56qI+LzpvGPGVE8lVS",
+      "include_colab_link": true
+    },
+    "kernelspec": {
+      "name": "python3",
+      "display_name": "Python 3"
+    },
+    "language_info": {
+      "name": "python"
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "view-in-github",
+        "colab_type": "text"
+      },
+      "source": [
+        "<a href=\"https://colab.research.google.com/github/Santosh344/Android_Task/blob/master/Learning%20Web%20Scrapping%20\" target=\"_parent\"><img src=\"https://colab.research.google.com/assets/colab-badge.svg\" alt=\"Open In Colab\"/></a>"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": 2,
+      "metadata": {
+        "id": "XoBh4mHL8AiZ"
+      },
+      "outputs": [],
+      "source": [
+        "import pandas as pd\n",
+        "from bs4 import BeautifulSoup\n",
+        "import requests, time, datetime,re,random"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "url=\"https://github.com/topics\"\n",
+        "headers = {\"User-agent\":'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/113.0.0.0 Safari/537.36'}\n",
+        "response=requests.get(url,headers=headers)\n",
+        "response.status_code\n"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "mKayvTNN88eK",
+        "outputId": "5516d67c-3bc1-4e59-9a87-3abbc9f0c5ea"
+      },
+      "execution_count": 43,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": [
+              "200"
+            ]
+          },
+          "metadata": {},
+          "execution_count": 43
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "soup = BeautifulSoup(response.text,'html.parser')\n",
+        "len(response.text)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "K015Jht4-RK3",
+        "outputId": "d6f4e1aa-b6fb-4848-9409-6cbc563509f2"
+      },
+      "execution_count": 45,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": [
+              "155986"
+            ]
+          },
+          "metadata": {},
+          "execution_count": 45
+        }
+      ]
+    }
+  ]
+}
